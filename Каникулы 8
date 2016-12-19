@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int n;
+
+int proper_fraction(){
+    int p=0;
+    p=2*n-1;
+    return p;
+}
+
+int main()
+{
+    cin >> n;
+    cout << proper_fraction();
+
+    return 0;
+}
