@@ -6,6 +6,7 @@ void incredible_sort(){
     int N, k;
     cin >> N >> k;
     int massiv[N];
+    //ввод
     for(int i=0;i<N;i++){
         cin >> massiv[i];
     }
@@ -23,6 +24,7 @@ void incredible_sort(){
         }
     }
     //конец сортировки
+    //вывод
     for(int i=0;i<N;i++) {
         cout << massiv[i];
     }
