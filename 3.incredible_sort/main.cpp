@@ -4,9 +4,9 @@ using namespace std;
 void incredible_sort(){
     
     int N, k;
+    //ввод
     cin >> N >> k;
     int massiv[N];
-    //ввод
     for(int i=0;i<N;i++){
         cin >> massiv[i];
     }
