@@ -22,7 +22,7 @@ void incredible_sort(){
             }
         }
     }
-    
+    //конец сортировки
     for(int i=0;i<N;i++) {
         cout << massiv[i];
     }
