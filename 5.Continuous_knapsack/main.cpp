@@ -9,10 +9,10 @@ int Continuous_knapsack(){
         cin >> w[i] >> c[i];
     }
     
-    float ch[n]; //доли от предметов
+    double ch[n]; //доли от предметов
     //заполнение пустых полей
     for(int i=0;i<n;i++){
-        ch[i]=0.0;
+        ch[i]=0;
     }
     
     int temp=1; // вре'менная переменная №1
@@ -33,18 +33,19 @@ int Continuous_knapsack(){
                 tempi=i;
             }
         }
-        ud[tempi]=0;
         
         if(W<w[tempi]){   ///Штука, отвечающая за доли и сумму
-            ch[tempi]=W*(1.0/w[tempi]);
+            ch[tempi]=W*(1.000/w[tempi]);
             C+=W*ud[tempi];
             W=0;
         }
         else{
-            ch[tempi]=1.0;
+            ch[tempi]=1;
             C+=c[tempi];
             W-=w[tempi];
         }
+        
+        ud[tempi]=0;
     }
     for(int i=0;i<n;i++){
         cout << ch[i] << "  ";
