@@ -15,7 +15,7 @@ void outer_points(){
   }
   for(int i=0;i<m;i++){
     for(int q=0;q<n;q++){
-      if((tochki[i]<=b[q]) && (tochki[i]>=b[q])){
+      if((tochki[i]<=b[q]) && (tochki[i]>=a[q])){
         prinadleg[i]-=1;
       }
     }
