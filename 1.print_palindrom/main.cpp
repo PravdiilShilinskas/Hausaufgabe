@@ -25,7 +25,7 @@ void print_palindrom(int n){
     }
 }
 
-int main{
+int main(){
     int n;
     cin >> n;
     print_palindrom(n);
