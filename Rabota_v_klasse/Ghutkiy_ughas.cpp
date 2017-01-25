@@ -1,54 +1,68 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    
-    typedef class pair_int{
-        int first;
-        int second;
-    public:
-        void pair_int1(int f, int s){
-            first=f;
-            second=s; 
-        }
-        void pair_int2(int &a, int &b){
-            a=first;
-            b=second;
-        }
+typedef class pair_int{
+    int first;
+    int second;
+public:
+    pair_int(int f, int s){
+        first=f;
+        second=s; 
+    }
+
+    pair_int(pair_int &a){
+        first=a.get_first();
+        second=a.get_second();
+    }
         
-        void get_first(){
-            cout << first;
-        }
-        void get_second(){
-            cout << second;
-        }
-        void set_first(){
-            cin >> first;
-        }
-        void set_second(){
-            cin >> second;
-        }
-        operator ==(pair_int &x, pair_int &y){
-            int a, b, c, d;
-            pair_int2.x(a, b);
-            pair_int2.y(c, d);
-            if((a==c)&&(b==d)) return 1;
-            return 0;
-        }
-        operator !=(pair_int &x, pair_int &y){
-            int a, b, c, d;
-            pair_int2.x(a, b);
-            pair_int2.y(c, d);
-            if((a==c)&&(b==d)) return 0;
-            return 1;
-        }
-        void swap(pair_int &x, pair_int &y){
-            int a, b, c, d;
-            pair_int2.x(a, b);
-            pair_int2.y(c, d);
-            pair_int1.x(c, d);
-            pair_int1.y(a, b);
-        }
-    }pair_int;
+    int get_first(){
+        return first;
+    }
+
+    int get_second(){
+        return second;
+    }
+
+    void set_first(int f){
+        first=f;
+    }
+
+    void set_second(int s){
+        second=s;
+    }
+
+}pair_int;
+    
+bool operator==(pair_int x, pair_int y){        
+        if( (x.get_first()==y.get_first()) && (x.get_second()==y.get_second()) ) 
+        return 1;
+    return 0;
+}
+        
+bool operator!=(pair_int x, pair_int y){
+    if(x==y) return 0;
+        return 1;
+}
+
+    void swap(pair_int x, pair_int y){
+        int temp[2];
+        temp[0]=x.get_first();
+        temp[1]=x.get_second();
+        x.set_first(y.get_first());
+        x.set_second(y.get_second());
+        y.set_first(temp[0]);
+        y.set_second(temp[1]);
+    }
+
+int main(){
+    pair_int A(200,100);
+    A.set_second(300);
+    cout<<A.get_first()<<" "<<A.get_second()<<endl;
+    pair_int B(A);
+    A.set_second(400);
+    if(B==A) cout<<"Weee!"<<endl;
+    else cout<<"Nooo!"<<endl;
+    swap(A, B);
+    cout<<A.get_first()<<" "<<A.get_second()<<endl;
     return 0;
 }
