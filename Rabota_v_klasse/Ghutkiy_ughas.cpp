@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     
-    typedef class{
+    typedef class pair_int{
         int first;
         int second;
     public:
@@ -28,21 +28,21 @@ int main(){
         void set_second(){
             cin >> second;
         }
-        operator ==(pair &x, pair &y){
+        operator ==(pair_int &x, pair_int &y){
             int a, b, c, d;
             pair_int2.x(a, b);
             pair_int2.y(c, d);
             if((a==c)&&(b==d)) return 1;
             return 0;
         }
-        operator !=(pair &x, pair &y){
+        operator !=(pair_int &x, pair_int &y){
             int a, b, c, d;
             pair_int2.x(a, b);
             pair_int2.y(c, d);
             if((a==c)&&(b==d)) return 0;
             return 1;
         }
-        void swap(pair &x, pair &y){
+        void swap(pair_int &x, pair_int &y){
             int a, b, c, d;
             pair_int2.x(a, b);
             pair_int2.y(c, d);
