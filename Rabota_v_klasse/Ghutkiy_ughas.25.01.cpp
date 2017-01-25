@@ -44,14 +44,14 @@ bool operator!=(pair_int x, pair_int y){
         return 1;
 }
 
-    void swap(pair_int x, pair_int y){
-        int temp[2];
-        temp[0]=x.get_first();
-        temp[1]=x.get_second();
+    void swap(pair_int &x, pair_int &y){
+        int temp;
+        temp=x.get_first();
         x.set_first(y.get_first());
+        y.set_first(temp);
+        temp=x.get_second();
         x.set_second(y.get_second());
-        y.set_first(temp[0]);
-        y.set_second(temp[1]);
+        y.set_second(temp);
     }
 
 int main(){
@@ -64,5 +64,6 @@ int main(){
     else cout<<"Nooo!"<<endl;
     swap(A, B);
     cout<<A.get_first()<<" "<<A.get_second()<<endl;
+    cout<<B.get_first()<<" "<<B.get_second()<<endl;
     return 0;
 }
