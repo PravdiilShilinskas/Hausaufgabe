@@ -2,15 +2,15 @@
 using namespace std;
 
 
-struct node{
+struct note{
     int data;
-    node*next;
+    note*next;
 };
 class stack{
-    node*head;
+    note*head;
 public:
     stack(int a){
-        head=new node;
+        head=new note;
         head->data=a;
         head->next=NULL;
     }
