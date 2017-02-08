@@ -8,7 +8,6 @@ struct node{
 };
 class queue{
     node*head;
-    int temp;
 public:
     queue(int a){
         head=new node;
