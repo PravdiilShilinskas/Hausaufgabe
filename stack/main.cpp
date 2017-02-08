@@ -21,6 +21,11 @@ public:
         head=temp;
     }
     int pop(){
+        if(temp->next==NULL){
+            int a=temp->data;
+            delete temp;
+            return a;
+       }
         note*temp=head;
         int a=temp->data;
         head=head->next;
