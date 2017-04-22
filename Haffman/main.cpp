@@ -3,7 +3,7 @@
 using namespace std;
 //Код расчитан на ручное составление сообщения по выданным данным.
 void Haffman(int n, int** a){
-   if(n==2){break;}
+if(n!=2){
    
    int k=n;
    int p=0;
@@ -48,6 +48,7 @@ void Haffman(int n, int** a){
    a[(min[0][0])][k-1]=b[n-1][n-1];
    a[(min[1][0])][k-1]=b[n-1][n-1];
 
+};
 }
 
 int main(){
