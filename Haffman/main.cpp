@@ -33,7 +33,7 @@ if(n!=2){
    a[(min[0][0])][k-1]=1;
    a[(min[1][0])][k-1]=0;
    
-   int**b=new int[k-1][k-1];
+   int b[k-1][k-1];
    
    for(int i=0;i<k;i++){
       if((i==min[0][0])||(i==min[1][0])){
@@ -56,7 +56,7 @@ int main(){
    int n;
    cout << "Количество букв -  ";
    cin >> n;
-   int**Array=new int[n][n];
+   int Array[n][n];
    for(int i=0;i<n;i++){
       cout << "Количество повторов буквы номер " << i << " - ";
       cin >> Array[i][0];
