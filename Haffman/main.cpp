@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 //Код расчитан на ручное составление сообщения по выданным данным.
 void Haffman(int n, int** a){
