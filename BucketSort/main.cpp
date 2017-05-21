@@ -4,7 +4,6 @@ using namespace std;
 void BucketSort(int* Array, int n){   //Аргументы
    int k=0;   //вёдра
    int b=0;   //перенумератор исходного массива
-   int d=1;   // счётчик минисортировки
 
    for(int i=0;i<n;i++){   //максимальное значение
       if(k<Array[i]){
@@ -24,9 +23,11 @@ void BucketSort(int* Array, int n){   //Аргументы
                   temp=c;
                };
             };
-            Joker[i][j]=Array[temp];   //назначение элемента в ведро
-            Array[temp]=-1;   //стерание элемента из исходного массива
-            s++;
+            if(temp!=-(1)){
+               Joker[i][j]=Array[temp];   //назначение элемента в ведро
+               Array[temp]=-1;   //стерание элемента из исходного массива
+               s++;
+            };
          };
       if(s<10){   //обозначение конца данных в ведре, если оно не полное
          Joker[i][s]=-1;
@@ -34,6 +35,7 @@ void BucketSort(int* Array, int n){   //Аргументы
    };
    
    for(int i=0;i<k;i++){   //сортировка вёдер
+      int d=1;   // счётчик минисортировки
       for(int j=0;(j<9);j++){
          int c=0;
          for(int p=0;p<11-d;p++){
