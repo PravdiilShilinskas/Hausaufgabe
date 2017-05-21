@@ -35,23 +35,29 @@ void BucketSort(int* Array, int n){   //Аргументы
    };
    
    for(int i=0;i<k;i++){   //сортировка вёдер
+      int u;   //местоположение метки
+      for(int r=0;r<10;r++){
+         if(Joker[i][r]==-1){
+            u=r;
+         };
+      };
       int d=1;   // счётчик минисортировки
-      for(int j=0;(j<9);j++){
+      for(int j=0;(j<u-1);j++){
          int c=0;
-         for(int p=0;p<11-d;p++){
+         for(int p=0;p<u+1-d;p++){
             if(Joker[i][c]<Joker[i][p]){
                c=p;
             };
          };
-         int tmp=Joker[i][10-d];
-         Joker[i][10-d]=Joker[i][c];
+         int tmp=Joker[i][u-d];
+         Joker[i][u-d]=Joker[i][c];
          Joker[i][c]=tmp;
          d++;
       };
    };
    
    for(int i=0;i<k;i++){   //возращение вёдер на место
-      for(int j=0;((j<10)||(Joker[i][j]!=-1));j++){
+      for(int j=0;((j<10)&&(Joker[i][j]!=-1));j++){
          Array[b]=Joker[i][j];
          b++;
       };
